@@ -1,1 +1,3 @@
-TRAIN LIKE NOTHING ELSE
+# Intelligent Systems: Advanced Embedded AI for Real-World Problems
+>
+
