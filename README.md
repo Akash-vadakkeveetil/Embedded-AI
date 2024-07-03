@@ -1,5 +1,5 @@
-# Intelligent Systems: Advanced Embedded AI for Real-World Problems
 
+<h1 align="center">Intelligent Systems: Advanced Embedded AI for Real-World Problems</h1>
 
 IR Censor code
 ```PYTHON
@@ -151,3 +151,5 @@ while True:
 camera.release()
 cv2.destroyAllWindows()
 ```
+
+to make the training images we can use a tool called makeset AI
