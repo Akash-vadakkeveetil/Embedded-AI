@@ -40,7 +40,7 @@ sudo pip3 install -U jetson-stats
 ## Programs using Jetso Nano
 
 - [Blinking LED Using Jetson Nano](#BLINKING-LED)
-- 
+- [Accessing USB cameras](#ACCESS-CAMERAS)
 
 
 ## BLINKING-LED
@@ -63,6 +63,39 @@ sudo pip3 install -U jetson-stats
 ```
 
 ##
+
+## ACCESS-CAMERAS
+USB camera configuration 
+```BASH
+
+sudo apt install v41-utils
+v412-ctl --11st-devices
+sudo apt-get install apt-utils
+```
+
+Accessing the cameras
+
+```PYTHON
+import cv2
+#Open the camera
+ap = cv2.VideoCapture(0)
+#Set the window name
+window name = 'USB Camera'
+# Loop over frames from the camera
+
+while True:
+    # Read a frame from the camera
+    ret, frame = cap. read()
+    # Check if the frame was successfully read
+    if not ret:
+        print( 'Error: could not read frame' )
+        break
+    # Display the frame in a window
+    cv2. imshow(window_name, frame)
+    # Wait for a key press
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break   
+```
 
 IR Censor code
 ```PYTHON
