@@ -5,7 +5,7 @@ The whole trainig is done with the aid of jetson nano developer kit.
 The NVIDIA® Jetson Nano™ Developer Kit is a small AI computer for makers, learners, and developers. After following along with this brief guide, you’ll be ready to start building practical AI applications, cool AI robots, and more.
 [Read more about Jetson Nano developer kit](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit)
 
-#INDEX
+# INDEX
 - [Jetson Nano](#The-Jetson-Nano)
 - [Basic programs using Jetson Nano](#Programs-using-Jetson-Nano)
 - [Image Processing](#Image-processing)
@@ -73,7 +73,7 @@ sudo pip3 install -U jetson-stats
 ##
 
 ## ACCESS-CAMERAS
-USB camera configuration 
+### USB camera configuration 
 ```BASH
 
 sudo apt install v41-utils
@@ -81,7 +81,7 @@ v412-ctl --11st-devices
 sudo apt-get install apt-utils
 ```
 
-Accessing the cameras
+### Accessing the cameras
 
 ```PYTHON
 import cv2
@@ -107,10 +107,10 @@ while True:
 
 # SENSOR-INTERFACING   
 
-Components of an IR sensor
+### Components of an IR sensor
 ![SENSOR IR](images/ir.png)
 
-The code for detecting an object using IR sensor
+### The code for detecting an object using IR sensor
 ```PYTHON
 import RPi.GPIO as GPIO
 import time
