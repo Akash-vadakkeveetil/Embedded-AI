@@ -3,8 +3,15 @@
 
 The whole trainig is done with the aid of jetson nano developer kit.
 The NVIDIA® Jetson Nano™ Developer Kit is a small AI computer for makers, learners, and developers. After following along with this brief guide, you’ll be ready to start building practical AI applications, cool AI robots, and more.
-
 [Read more about Jetson Nano developer kit](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit)
+
+#INDEX
+- [Jetson Nano](The-Jetson-Nano)
+- [Basic programs using Jetson Nano](Programs-using-Jetso-Nano)
+- [Image Processing](#Image-processing)
+
+# The-Jetson-Nano
+he Jetson Nano is a single-board computer (SBC) that includes GPU capabilities, making it a powerful tool for AI and machine learning applications
 
 ![Jetson.png](images/Jetson.png)
 ![Jetson1.png](images/Jetson-1.png)
@@ -37,10 +44,11 @@ sudo pip3 install -U jetson-stats
 
 ![Pin diagram](images/Pin.png)
 
-## Programs using Jetso Nano
+# Programs-using-Jetso-Nano
 
 - [Blinking LED Using Jetson Nano](#BLINKING-LED)
 - [Accessing USB cameras](#ACCESS-CAMERAS)
+- [IR sensor interfacing](#SENSOR-INTERFACING)
 
 
 ## BLINKING-LED
@@ -97,7 +105,12 @@ while True:
         break   
 ```
 
-IR Censor code
+# SENSOR-INTERFACING   
+
+Components of an IR sensor
+![SENSOR IR](images/ir.png)
+
+The code for detecting an object using IR sensor
 ```PYTHON
 import RPi.GPIO as GPIO
 import time
@@ -138,9 +151,7 @@ finally:
     GPIO.cleanup()
 ```
 
-## The image processing
-
-We are gonna use opencv for image processing
+# Image-processing
 
 ```PYTHON
 import cv2
