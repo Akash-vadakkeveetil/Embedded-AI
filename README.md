@@ -12,12 +12,12 @@ The NVIDIA® Jetson Nano™ Developer Kit is a small AI computer for makers, lea
 
 ### Setting up Jetson Nano
 
-- [Hardware requirements](#)
+- [Hardware requirements](#Hardware-Requirements)
 - Downloading JetPack SDK
 - Flashing the SD card
 - Setting up the environment
 
-### Hardware Requirements
+### Hardware-Requirements
 
 
 
