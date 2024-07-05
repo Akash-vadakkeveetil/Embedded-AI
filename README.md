@@ -6,8 +6,8 @@ The NVIDIA® Jetson Nano™ Developer Kit is a small AI computer for makers, lea
 [Read more about Jetson Nano developer kit](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit)
 
 #INDEX
-- [Jetson Nano](The-Jetson-Nano)
-- [Basic programs using Jetson Nano](Programs-using-Jetso-Nano)
+- [Jetson Nano](#The-Jetson-Nano)
+- [Basic programs using Jetson Nano](#Programs-using-Jetson-Nano)
 - [Image Processing](#Image-processing)
 
 # The-Jetson-Nano
@@ -44,7 +44,7 @@ sudo pip3 install -U jetson-stats
 
 ![Pin diagram](images/Pin.png)
 
-# Programs-using-Jetso-Nano
+# Programs-using-Jetson-Nano
 
 - [Blinking LED Using Jetson Nano](#BLINKING-LED)
 - [Accessing USB cameras](#ACCESS-CAMERAS)
