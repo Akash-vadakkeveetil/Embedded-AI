@@ -13,13 +13,56 @@ The NVIDIA® Jetson Nano™ Developer Kit is a small AI computer for makers, lea
 ### Setting up Jetson Nano
 
 - [Hardware requirements](#Hardware-Requirements)
-- Downloading JetPack SDK
-- Flashing the SD card
-- Setting up the environment
+- Downloading JetPack SDK (format SD card using gnome-disks)
+- Flashing the SD card (Select Jetpack and Flash to SD Card using balena etcher)
+- [Setting up the environment](#Set-up)
 
 ### Hardware-Requirements
+• Power Supply
+• HDMI Cable
+• SD Card
+• Monitor
+• Mouse
+• Keyboard
+
+### Set-up
+```BASH
+sudo apt install python3-pip
+pip3 install setuptools
+sudo pip3 install -U jetson-stats
+```
 
 
+### Jetson Nano pin Diagram
+
+![Pin diagram](images/Pin.png)
+
+## Programs using Jetso Nano
+
+- [Blinking LED Using Jetson Nano](#BLINKING-LED)
+- 
+
+
+## BLINKING-LED
+```PYTHON
+ import Jetson.GPIO as GPIO
+ import time
+
+#pin definitions
+ LED_PIN = 12# BCM pin is differnt form board pin
+
+#pin - setup
+ GPI0.setmode(GPIO.BOARD)# BCM pin-numbering scheme from Raspberry Pi
+ GPIO.setup(LED_PIN, GPIO.OUT)#LED pin set as input
+
+ while True:
+    GPIO.output(LED_PIN, GPIO.HIGH)
+    time.sleep(1)
+    GPIO.output(LED_PIN, GPIO.LOW)
+    time.sleep(1)
+```
+
+##
 
 IR Censor code
 ```PYTHON
