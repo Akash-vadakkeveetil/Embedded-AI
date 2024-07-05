@@ -1,6 +1,26 @@
 
 <h1 align="center">Intelligent Systems: Advanced Embedded AI for Real-World Problems</h1>
 
+The whole trainig is done with the aid of jetson nano developer kit.
+The NVIDIA® Jetson Nano™ Developer Kit is a small AI computer for makers, learners, and developers. After following along with this brief guide, you’ll be ready to start building practical AI applications, cool AI robots, and more.
+
+[Read more about Jetson Nano developer kit](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit)
+
+![Jetson.png](images/Jetson.png)
+![Jetson1.png](images/Jetson-1.png)
+
+
+### Setting up Jetson Nano
+
+- [Hardware requirements](#)
+- Downloading JetPack SDK
+- Flashing the SD card
+- Setting up the environment
+
+### Hardware Requirements
+
+
+
 IR Censor code
 ```PYTHON
 import RPi.GPIO as GPIO
