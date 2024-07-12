@@ -9,6 +9,7 @@ The NVIDIA® Jetson Nano™ Developer Kit is a small AI computer for makers, lea
 - [Jetson Nano](#The-Jetson-Nano)
 - [Basic programs using Jetson Nano](#Programs-using-Jetson-Nano)
 - [Image Processing](#Image-processing)
+- [MQTT](#MQTT-(Message-Queuing-Telemetry-Transport))
 
 # The-Jetson-Nano
 he Jetson Nano is a single-board computer (SBC) that includes GPU capabilities, making it a powerful tool for AI and machine learning applications
@@ -153,6 +154,18 @@ finally:
 
 # Image-processing
 
+
+Image processing is a field that involves using techniques and methods to enhance, analyze, and manipulate images. It includes tasks such as improving image quality through adjustments in brightness and contrast, transforming images by rotating or resizing, applying filters to highlight or reduce specific features, segmenting images to isolate objects or regions, and recognizing and classifying patterns or objects within images. These processes are used in various applications, including photography, medical imaging, and machine learning, to make images more useful and informative.
+
+Image processing with python is done with the help of various libraries such as pillow, OpenCV, SimpleCV . We are gonna use OpenCV here.
+
+ #### Install OpenCv
+```PYTHON
+pip install opencv-python
+pip install numpy
+```
+#### Image and video capture
+
 ```PYTHON
 import cv2
   
@@ -164,11 +177,57 @@ cv2.destroyAllWindows()
 
 ```
 
+```PYTHON
+mport cv2
+aptureobject
+aptureobject
+aptureobject
+aptureobject
+= cv2.VideoCapture( 'path-to-video' )
+= cv2.VideoCapture(0)
+VideoCapture( n)
+= cv2.
+= cv2.VideoCapture( )
+```
+
 To resize the image add the commad 
 ```PYTHON
 resize_im = cv2.resize(img,(1200,400))
 ```
 
+#### Some transformations of images 
+```PYTHON
+• Resizing: resized_img = cv2.resize(img, (new_width, new_height))
+• Reading Images with Different Colors:
+BGR : img = cv2.imread('path-to-image')
+Gray Scale : gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+• Flipping = cv2.flip(img, O)
+• Inverting Images: invert_img = cv2.bitwise_not(img)
+• Blurring Images:blur_img = cv2.blur(img, (kernel_width, kernel _ height))
+• Dilation : dilated_img = cv2.dilate(img, (kernel_width, kernel_height))
+• Erosion:eroded_img = cv2.erode(img, (kernel_width, kernel_height))
+• Thresholding: var,threshold_image = cv2.threshold(gray_img,
+threshold _ value, maximum_pixel_value, cv2.THRESH BINARY)
+Edge Detection: img_edge = cv2.Canny(img, threshold_valuel,
+threshold_value2)
+• Saving Image: cv2.imwrite('path-to-save-the-image', img)
+```
+Example code for saving frames
+```PYTHON
+
+import cv2
+vide00bject = cv2.VideoCapture(0)
+while True:
+    ret, frame = videoObject . read()
+    if not ret:
+        break
+    cv2. imshow( 'Video' ,frame)
+    cv2. imwrite( "path-to-save-frame/ f rame. jpg" ,frame)
+    if cv2.waitKey(1) & 0xFF == ord( 'q' ) :
+        break
+videoObject . release()
+cv2 . destroyAllIWindows()
+```
 Detecting object or movemnts in the screen and saving it to sysstem if the movement detected
 
 ```PYTHON
@@ -257,6 +316,63 @@ while True:
 # Cleanup
 camera.release()
 cv2.destroyAllWindows()
+
 ```
 
-to make the training images we can use a tool called makeset AI
+
+# MQTT-(Message-Queuing-Telemetry-Transport)
+
+![MQTT](images/mqtt.png)
+
+#### Need for Messaging Protocols in IoT
+• Challenges with device-to-device communication
+• Importance of reliable and efficient message delivery
+• Role of messaging protocols in IoT
+#### MQTT Protocol
+• Characteristics and advantages of MQTT
+• MQTT architecture and components
+
+
+### MQTT EXAMPLE
+
+```BASH
+
+pip3 install paho-mqtt
+sudo apt install mosquitto mosquitto-clients
+mosquitto_sub -h -t test
+mosquitto_pub -h -t test -m "hello world"
+
+```
+
+```PYTHON
+
+import Jetson.GPIO as GPIO
+import time
+import paho.mqtt.client as mqtt
+LED_PIN = 11
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(LED_PIN,GPIO.OUT)
+
+def on_message (client, userdata, message):
+    if message.payload.decode ( ) == "on":
+        GPIO.ouptput(11,GPIO.HIGH)
+        print( "LED is on" )
+    elif message.payload.decode( ) =="off " :
+        GPIO.ouptput(11,GPIO.LOW)
+        print ("LED is off")
+
+client = mqtt.Client( )
+client. connect( "localhost" ,1883,60)
+client.subscribe ("led" )
+client.on_message = on_message
+client.loop_forever()
+
+```
+
+```PYTHON
+import paho.mqtt.publish as publish
+publish.single( "led" ,"on" ,hostname="192.168.29.237")
+```
+
+
+
