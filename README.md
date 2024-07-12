@@ -9,7 +9,7 @@ The NVIDIA® Jetson Nano™ Developer Kit is a small AI computer for makers, lea
 - [Jetson Nano](#The-Jetson-Nano)
 - [Basic programs using Jetson Nano](#Programs-using-Jetson-Nano)
 - [Image Processing](#Image-processing)
-- [MQTT](#MQTT-(Message-Queuing-Telemetry-Transport))
+- [MQTT](#Message-Queuing-Telemetry-Transport)
 
 # The-Jetson-Nano
 he Jetson Nano is a single-board computer (SBC) that includes GPU capabilities, making it a powerful tool for AI and machine learning applications
@@ -320,7 +320,7 @@ cv2.destroyAllWindows()
 ```
 
 
-# MQTT-(Message-Queuing-Telemetry-Transport)
+# Message-Queuing-Telemetry-Transport
 
 ![MQTT](images/mqtt.png)
 
